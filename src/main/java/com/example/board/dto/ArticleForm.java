@@ -1,26 +1,16 @@
 package com.example.board.dto;
 
 import com.example.board.entity.Article;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
 
+@AllArgsConstructor
+@ToString // 데이터가 잘 받아졌는지 확인 용도
 // new.mustache에서 form 데이터를 받아올 그릇
 public class ArticleForm {
 
     private String title;
     private String content;
-
-    public ArticleForm(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
-
-    // 데이터가 잘 받아졌는지 확인 용도
-    @Override
-    public String toString() {
-        return "ArticleForm{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
 
     // DTO인 form에서 Entity객체로 변환하는 메소드
     public Article toEntity() {
