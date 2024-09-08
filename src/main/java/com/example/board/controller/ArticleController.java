@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j // 로깅을 위한 어노테이션
 public class ArticleController {
 
-    private static final Logger log = LoggerFactory.getLogger(ArticleController.class);
     @Autowired // 스프링 부트가 미리 생성해놓은 객체를 가져다가 자동 연결!
     private ArticleRepository articleRepository;
 
