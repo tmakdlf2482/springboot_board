@@ -1,0 +1,23 @@
+{{>layouts/header}}
+
+<!-- article.title, article.content, article.id 와 같이 article. 이 반복되므로 #article로 감싸줌 -->
+<!-- article. 을 생략할 수 있음 -->
+<!-- form 태그는 GET, POST만 지원함 -->
+{{#article}}
+<form class="container" action="/articles/update" method="post">
+  <!-- article.id값을 숨겨서(hidden) 전송 -->
+  <input type="hidden" name="id" value="{{id}}" />
+  <div class="mb-3">
+    <label class="form-label">제목</label>
+    <input type="text" name="title" class="form-control" value="{{title}}">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">내용</label>
+    <textarea name="content" class="form-control" rows="3">{{content}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-success btn-sm">제출</button>
+  <a href="/articles/{{id}}" class="btn btn-primary btn-sm">해당 글로 되돌아가기</a>
+</form>
+{{/article}}
+
+{{>layouts/footer}}

@@ -21,6 +21,8 @@
   </tbody>
 </table>
 
-<a href="/articles">글 목록으로 되돌아가기</a>
+<!-- {{article.id}} : 모델에 등록된 article의 id를 가져올 수 있음 -->
+<a href="/articles/{{article.id}}/edit" class="btn btn-success btn-sm">수정</a>
+<a href="/articles" class="btn btn-primary btn-sm">글 목록으로 되돌아가기</a>
 
 {{>layouts/footer}}
