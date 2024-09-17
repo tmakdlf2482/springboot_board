@@ -46,3 +46,11 @@
       </div>
     </div>
   </nav>
+  <!-- 알림창 메시지 -->
+  <!-- msg 라는 등록된 데이터가 있으면 <div></div> 안에 있는 내용을 출력함 -->
+  {{#msg}}
+    <div class="alert alert-primary alert-dismissible">
+      {{msg}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {{/msg}}
