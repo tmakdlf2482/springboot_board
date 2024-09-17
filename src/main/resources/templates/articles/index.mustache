@@ -1,0 +1,25 @@
+{{>layouts/header}}
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Title</th>
+    <th scope="col">Content</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- model.addAttribute로 등록된 데이터는 #을 통해 가져올 수 있음 -->
+  <!-- articleList가 여러 데이터의 묶음(List)이므로 <tr></tr>을 반복시킴 -->
+  {{#articleList}}
+    <tr>
+      <th>{{id}}</th>
+      <td>{{title}}</td>
+      <td>{{content}}</td>
+    </tr>
+  {{/articleList}}
+  <!-- model.addAttribute로 등록된 데이터는 바로 윗줄까지만 사용 가능 -->
+  </tbody>
+</table>
+
+{{>layouts/footer}}
