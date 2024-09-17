@@ -3,9 +3,9 @@
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Title</th>
-    <th scope="col">Content</th>
+    <th scope="col">아이디</th>
+    <th scope="col">제목</th>
+    <th scope="col">내용</th>
   </tr>
   </thead>
   <tbody>
@@ -14,12 +14,14 @@
   {{#articleList}}
     <tr>
       <th>{{id}}</th>
-      <td>{{title}}</td>
+      <td><a href="/articles/{{id}}">{{title}}</a></td>
       <td>{{content}}</td>
     </tr>
   {{/articleList}}
   <!-- model.addAttribute로 등록된 데이터는 바로 윗줄까지만 사용 가능 -->
   </tbody>
 </table>
+
+<a href="/articles/new">New Article</a>
 
 {{>layouts/footer}}

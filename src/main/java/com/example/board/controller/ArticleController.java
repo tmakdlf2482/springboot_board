@@ -41,7 +41,7 @@ public class ArticleController {
         // System.out.println(saved.toString()); -> 로깅 기능으로 대체
         log.info(saved.toString());
 
-        return "";
+        return "redirect:/articles/" + saved.getId(); // saved.getId() 하게되면 해당 id값을 가져옴 (예를 들면, id값이 1, 2, 3, ...)
     }
 
     @GetMapping("/articles/{id}") // {id} 는 변하는 수가 들어옴. 예를 들어 /articles/1, /articles/2 이런식으로
