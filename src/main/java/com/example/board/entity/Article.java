@@ -23,4 +23,11 @@ public class Article {
     @Column
     private String content;
 
+    public void patch(Article article) { // article은 사용자가 수정하려는 데이터
+        if (article.getTitle() != null) // 사용자가 수정하려는 제목 데이터가 있다면
+            this.title = article.title; // 수정하려는 제목 데이터(article.title)를 this.title, 즉 기존 title 컬럼에 넣어줌
+        if (article.getContent() != null) // 사용자가 수정하려는 내용 데이터가 있다면
+            this.content = article.content; // 수정하려는 내용 데이터(article.content)를 this.content, 즉 기존 content 컬럼에 넣어줌
+    }
+
 }
