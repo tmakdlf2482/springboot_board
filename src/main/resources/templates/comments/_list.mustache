@@ -1,0 +1,13 @@
+<div id="comments-list">
+  <!-- DTO가 여러개의 데이터라면 {{#commentDtos}}{{/commentDtos}} 사이에 내용을 반복 -->
+  {{#commentDtos}}
+    <div class="card m-2" id="comments-{{id}}">
+      <div class="card-header">
+        {{nickname}}
+      </div>
+      <div class="card-body">
+        {{body}}
+      </div>
+    </div>
+  {{/commentDtos}}
+</div>
