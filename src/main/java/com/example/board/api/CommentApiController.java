@@ -1,5 +1,6 @@
 package com.example.board.api;
 
+import com.example.board.annotation.RunningTime;
 import com.example.board.dto.CommentDto;
 import com.example.board.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,7 @@ public class CommentApiController {
     }
 
     // 댓글 삭제
+    @RunningTime // 해당 메소드 수행 시간 측정
     @DeleteMapping("/api/comments/{id}")
     public ResponseEntity<CommentDto> delete(@PathVariable Long id) {
         // 서비스에게 위임
