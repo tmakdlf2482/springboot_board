@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Getter
@@ -19,6 +21,7 @@ public class Comment {
     private Long id;
 
     @ManyToOne // 해당 댓글 엔티티 여러개가 1개의 Article에 연관된다! (다대일 관계 설정)
+    @OnDelete(action = OnDeleteAction.CASCADE) // 게시글을 삭제할 때 해당 게시글에 댓글이 있으면 FK 제약조건 때문에 에러가 나므로, 게시글을 삭제할 때 해당 게시글의 댓글도 함께 삭제(CASCADE)
     @JoinColumn(name = "article_id") // 테이블에서 연결된 대상의 정보를 가져야 하는데 그 대상 정보의 컬럼의 이름 (FK이름)
     private Article article; // 댓글의 부모 게시글, 여러개의 댓글이 1개의 게시글에 달림
 

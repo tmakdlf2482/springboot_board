@@ -28,6 +28,9 @@ dependencies {
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// PostgreSQL 드라이버 추가!
+	runtimeOnly 'org.postgresql:postgresql'
 }
 
 tasks.named('test') {
